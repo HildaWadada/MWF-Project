@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWF Ltd Dashboard</title>
+    <link rel="stylesheet" href="CSS/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap-5.3.7-dist/DB.css">
+</head>
+<body>
+    
+  <aside class="sidebar">
+    <h2>MWF Ltd Dashboard</h2>
+    <nav>
+      <a href="sales Summary.html">Sales Summary</a>
+      <a href="stock Summary.html">Stock Summary</a>
+      <a href="Products.html">Products</a>
+      <a href="Attendants.html">Attendants</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header>
+      <h1>Welcome, Manager</h1>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total Sales Today</h3>
+        <p id="salesToday">UGX 5,500,000</p>
+      </div>
+      <div class="card">
+        <h3>Stock Items</h3>
+        <p id="stockCount">300</p>
+      </div>
+      <div class="card">
+        <h3>Low Stock</h3>
+        <p id="lowStockCount">50</p>
+      </div>
+      <div class="card">
+        <h3>Top Product</h3>
+        <p id="topProduct">Furniture</p>
+      </div>
+
+      <div class="card">
+        <h3>Monthly Sales</h3>
+        <p id="Monthly Sales"></p>
+        <ul>UGX 8,800,000</ul>
+      </div>
+      <div class="card">
+        <h3>Product Types</h3>
+        <p id="products Type">
+          <ul>
+            <li>
+              Wood products
+            </li>
+            <li>
+              Furniture products
+            </li>
+          </ul>
+        </p>
+      </div>
+
+    <section class="tables">
+      <div class="table-container">
+        <h3>Top Selling Products</h3>
+        <table>
+          <thead>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Product</th>
+      <th scope="col">Qty Sold</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+            <tr><th>Product</th><th>Qty Sold</th><th>Total</th></tr>
+          </thead>
+          <tbody id="topSellingTable">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <h3>Low Stock Alerts</h3>
+        <table>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Product</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+          <thead>
+            <tr><th>Product</th><th>Qty</th><th>Type</th></tr>
+          </thead>
+          <tbody id="lowStockTable">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="CSS/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
