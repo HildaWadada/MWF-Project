@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Log</title>
+    <title>Attendants</title>
     <link rel="stylesheet" href="CSS/bootstrap-5.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Attendants.css">
 
 </head>
 <body>
+   <div class="container mt-4">
     <div class="table-section">
          <h3>Sales Performance by Attendants</h3>
   <p>Below is a summary of total sales made by each employee over the current reporting period.</p>
         </div>
+
+        <!-- search box -->
+         <input type="text" id="searchBox" class="form-control mb-3" placeholder="search by employee name">
+
+
     <table border="2">
-        <table class="table table-hover">
+        <table class="table table-hover" id="attendantsTable">
              <thead class="table-dark">
-                <tr>
-                   <th>Employee Name</th> 
-                   <th>Role</th> 
-                   <th>Total sale (UGX)</th>
-                   <th>Number of Sales</th>
-                </tr>
-                </thead>
+               <tr>
+               <th onclick="sortTable(0)">Employee Name <span class="arrow"></span></th>
+               <th onclick="sortTable(1)">Role<span class="arrow"></span></th>
+               <th onclick="sortTable(2)">Number of Sales<span class="arrow"></span></th>
+               <th onclick="sortTable(3)">Total Sales  (UGX)<span class="arrow"></span></th>
+               <th onclick="sortTable(4)">Items Sold<span class="arrow"></span></th>
+             </tr>
+             </thead>
                     <tbody>
                      <tr>
                    <td>Wadada Hilda</td> 
@@ -39,7 +46,7 @@
                    <td>2</td>
                 </tr>
                 </tbody>
-                                <tbody>
+                     <tbody>
                      <tr>
                    <td>Martha Hayz</td> 
                    <td>Sales Assistant</td> 
@@ -47,7 +54,7 @@
                    <td> 3</td>
                    </tr>
                 </tbody>
-                                <tbody>
+                     <tbody>
                      <tr>
                    <td>Nyadoi Tabitha</td> 
                    <td>Loader</td> 
@@ -55,27 +62,30 @@
                    <td> 2</td>
                 </tr>
                 </tbody>
-                                <tbody>
+                  <tbody>
                      <tr>
                    <td>Katusiime Irene</td> 
                    <td>Sales Recorder</td> 
                    <td>800,000</td>
                    <td> 2</td>
+                   <td></td>
                 </tr>
                 </tbody>
-                                <tbody>
+                   <tbody>
                      <tr>
                    <td>Kisuule Reagan </td> 
                    <td>Sales Assistant</td> 
                    <td>0</td>
                    <td> 0</td>
-                </tr>
-                </tbody>
-  
-</table>
-    </table>
+                   <td>Nothing sold</td>
+            </tr>
+            </tbody>
 
-
+                <!-- total sales -->
+                 <h5 id="Total Sales" class="mt-3"></h5>
+             </div>
+      </table>
   <script src="CSS/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>  
+  <script src="attendants.js"></script>
 </body>
 </html>

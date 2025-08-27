@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: wheat;
-  color: #333;
+  background-color: #F5F6FA;
+  /* color: #333; */
   display: flex;
   min-height: 100vh;
 }
@@ -16,10 +16,10 @@ body {
 /* Sidebar */
 .sidebar {
   width: 220px;
-  background-color: rgb(27, 27, 27);
-  color: #fff;
+  background: #006655;
+  color: #131213;
   padding:20px;
-  height: 100vh;
+  height: 150vh;
 }
 
 .sidebar h2 {
@@ -39,7 +39,7 @@ body {
 }
 
 .sidebar nav a:hover {
-  background-color: #34495e;
+  background-color: #5c7d9e;
 }
 
 /* Main Content */
@@ -67,7 +67,7 @@ header h1 {
 }
 
 .card {
-  background-color: #9ab2db;
+  background-color: #c1f9e9;
   padding: 20px;
   border-radius: 12px;
   flex: 1;
@@ -109,5 +109,5 @@ th, td {
 }
 
 th {
-  background-color: #f7f7f7;
+  background-color: #221f1f;
 }

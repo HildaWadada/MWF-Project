@@ -8,10 +8,67 @@
     <link rel="stylesheet" href="CSS/stock summary.css">
 </head>
 <body>
+    <div class="container mt-4">
 <div class="table-section">
     <h3>Stock Summary</h3>
     <p>Here’s an overview of the current wood and furniture products in stock at MWF.</p>
 </div>
+
+<!-- Add stock button -->
+<button class="btn btn-primary add-stock-btn" data-bs-toggle="modal" data-bs-target="#addStockModal">
+  ➕ Add Stock
+</button>
+
+<!-- Add Stock Modal -->
+<div class="modal fade" id="addStockModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Add Stock</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="stockForm">
+          <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="productName" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input type="text" class="form-control" id="productType">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <input type="text" class="form-control" id="productCategory">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="productQty" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Cost Price</label>
+            <input type="text" class="form-control" id="costPrice">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Selling Price</label>
+            <input type="text" class="form-control" id="sellingPrice">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Supplier</label>
+            <input type="text" class="form-control" id="supplier">
+          </div>
+          <button type="submit" class="btn btn-success">Save Stock</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- table -->
     <table border="2">
       <table class="table table-bordered table-striped">
             <thead class="table-dark">
@@ -27,17 +84,17 @@
                    <th>Status</th> 
                 </tr>
                 </thead>
-                    <tbody>
+                    <tbody id="stockTableBody">
                      <tr>
                    <td>2025-07-12</td> 
                    <td>Mahogany Timber</td> 
                    <td>Wood</td>
                    <td>Hardwood</td>
-                   <td>100pcs</td> 
+                   <td class="qty">100pcs</td> 
                    <td>20,000</td> 
                     <td>25,000</td>
                    <td>Gulu Timber Ltd</td> 
-                    <td>In Stock</td>
+                    <td class="status"></td>
                 </tr>
                 </tbody>
                                     <tbody>
@@ -46,11 +103,11 @@
                    <td>3-Seater Sofa</td> 
                    <td>Furniture</td>
                    <td>Sofa</td>
-                   <td>15 units</td> 
+                   <td class="qty">15</td> 
                    <td>350,00</td> 
                     <td>500,000</td>
                    <td>Kampala Interiors</td> 
-                    <td>In Stock</td>
+                    <td class="status"></td>
                 </tr>
                 </tbody>
                                     <tbody>
@@ -59,11 +116,11 @@
                    <td>Office Desk</td> 
                    <td>Furniture</td>
                    <td>Office</td>
-                   <td>0</td> 
+                   <td class="qty">0</td> 
                    <td>250,000</td> 
                     <td>400,000</td>
                    <td>Nairobi Imports</td> 
-                    <td>Out of Stock</td>
+                    <td class="status"></td>
                 </tr>
                 </tbody>
                                     <tbody>
@@ -72,17 +129,18 @@
                    <td>Double Decker Bed</td> 
                    <td>Bedroom</td>
                    <td>Furniture</td>
-                   <td>300pcs</td> 
+                   <td class="qty">300</td> 
                    <td>100,000</td> 
                     <td>150,000</td>
                    <td>E&E Interiors</td> 
-                    <td>Low Stock</td>
+                    <td class="status"></td>
                 </tr>
                 </tbody>
                 </div>
             </table>
                 
 <script src="CSS/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+ <script src="stock.js"></script>
     
 </body>
 </html>
