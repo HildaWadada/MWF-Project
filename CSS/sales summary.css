@@ -1,14 +1,15 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fdfdfd;
+  background-color: #c0d8f4;
   padding: 20px;
   color: #333;
 }
 
 h3 {
-  color: #6f42c1;
+  color: #0f0f0f;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .text-muted {
@@ -16,14 +17,14 @@ h3 {
 }
 
 .table {
-  background-color: #ffffff;
+  background-color: #6ae793;
   border-collapse: collapse;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .table th {
-  background-color: #6f42c1;
-  color: white;
+  background: #171718;
+  color: rgb(129, 161, 234);
   text-align: center;
   font-weight: 600;
 }
@@ -35,7 +36,7 @@ h3 {
 }
 
 .table-striped tbody tr:nth-child(odd) {
-  background-color: #f8f5fc;
+  background-color: #c19bf2;
 }
 
 .table-bordered {

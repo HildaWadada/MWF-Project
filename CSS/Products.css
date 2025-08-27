@@ -1,12 +1,68 @@
+/* ===== Products Page Styling ===== */
+body {
+  background: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 h2 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2c5364;
 }
 
-table {
-  background-color: #fff;
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-section {
-  padding: 20px 0;
+.table thead {
+  background: linear-gradient(90deg, #203a43, #2c5364);
+  color: #fff;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.3s ease;
+}
+
+/* Status labels */
+.text-success {
+  font-weight: 600;
+}
+.text-warning {
+  font-weight: 600;
+}
+.text-danger {
+  font-weight: 600;
+}
+
+/* Action buttons */
+.btn-sm {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn-warning {
+  color: #fff;
+}
+.btn-danger {
+  color: #fff;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  background: linear-gradient(90deg, #0f2027, #2c5364);
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-footer {
+  border-top: none;
 }

@@ -1,40 +1,101 @@
-.table-section {
-  padding: 30px;
-  background-color: #fdfbfe;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 40px;
+/* attendants.css */
+
+/* General Page Styling */
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.table-section h3 {
-  color: #6f42c1;
-  margin-bottom: 20px;
+/* Page Title */
+h2 {
   font-weight: bold;
+  color: #343a40;
 }
 
+/* Table Styling */
 .table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.table thead {
-  background-color: #dc8ccc;
-  color: white;
+.table th {
+  text-align: center;
+  vertical-align: middle;
 }
 
-.table th, .table td {
-  padding: 12px 15px;
-  border: 1px solid #e0e0e0;
-  text-align: left;
+.table td {
+  vertical-align: middle;
 }
 
-.table tbody tr:hover {
-  background-color: #f3e6fa;
-  cursor: pointer;
-}
-
-.table td:first-child {
+/* Status Colors */
+.text-success {
   font-weight: bold;
-  color: #393f81;
+}
+
+.text-danger {
+  font-weight: bold;
+}
+
+.text-warning {
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #004494;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+/* Search Input */
+#searchAttendant {
+  border-radius: 20px;
+  padding-left: 12px;
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #343a40;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-footer {
+  border-top: none;
 }

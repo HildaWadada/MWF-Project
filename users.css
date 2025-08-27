@@ -1,0 +1,33 @@
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient( to right, #76e2f6, #f794f0);
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-card {
+      background: #69a0cd;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-card h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .btn-primary {
+      width: 100%;
+      background: #4e73df;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: #2e59d9;
+    }
