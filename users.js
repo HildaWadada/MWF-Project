@@ -13,8 +13,8 @@
         window.location.href = "dashboard.html";
       } else if (role === "employee") {
         alert("Welcome Employee " + username + "! Redirecting to Employee Dashboard...");
-        // redirect to employee page
-        window.location.href = "employee-dashboard.html";
+        // redirect to employees page
+        window.location.href = "employee-db.html";
       } else {
         alert("Please select a role!");
       }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Report - MWF</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .summary-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+    .summary-card:hover {
+      transform: translateY(-5px);
+    }
+    .summary-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    .summary-card p {
+      color: #6c757d;
+    }
+    table {
+      background: white;
+    }
+    .btn-export {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="text-center mb-4">📊 Manager Report</h1>
+
+  <!-- Summary Cards -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>UGX 5M</h3>
+        <p>Total Sales</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>120</h3>
+        <p>Total Stock Items</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>8</h3>
+        <p>Employees</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>Sofa Set</h3>
+        <p>Top Product</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>UGX 15M</h3>
+        <p>Total Revenue</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+      <div class="summary-card">
+        <h3>3</h3>
+        <p>Pending Orders</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sales Chart -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Monthly Sales Overview</h5>
+      <canvas id="salesChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Sales Table -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Sales Report</h5>
+      <table class="table table-striped" id="salesTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total (UGX)</th>
+            <th>Sales Agent</th>
+            <th>Payment Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-09-01</td>
+            <td>Sofa Set</td>
+            <td>3</td>
+            <td>1,500,000</td>
+            <td>Sarah</td>
+            <td>Cash</td>
+          </tr>
+          <tr>
+            <td>2025-09-02</td>
+            <td>Timber</td>
+            <td>5</td>
+            <td>2,500,000</td>
+            <td>Mark</td>
+            <td>Bank</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success btn-export" onclick="downloadExcel()">⬇️ Download Excel</button>
+      <button class="btn btn-danger btn-export" onclick="downloadPDF()">⬇️ Download PDF</button>
+    </div>
+  </div>
+
+  <script>
+    // Chart.js Sales Chart
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+          label: 'Sales (UGX)',
+          data: [500000, 700000, 1000000, 1200000, 900000, 1400000, 1600000, 2000000, 1800000],
+          backgroundColor: '#007bff'
+        }]
+      }
+    });
+
+    // Download Excel
+    function downloadExcel() {
+      var table = document.getElementById("salesTable");
+      var wb = XLSX.utils.table_to_book(table, { sheet: "Sales" });
+      XLSX.writeFile(wb, "sales_report.xlsx");
+    }
+
+    // Download PDF
+    async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.text("MWF Sales Report", 14, 16);
+      doc.autoTable({ html: '#salesTable', startY: 20 });
+      doc.save('sales_report.pdf');
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
