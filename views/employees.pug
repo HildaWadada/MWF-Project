@@ -1,0 +1,31 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title MWF Employee Dashboard
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/employees.css")
+//  Sidebar 
+.sidebar
+  h4.text-center.mb-4 MWF Employee
+  a(href="#") Dashboard
+  a(href="/sales") My Sales
+  a(href="/salesrecords") Record a Sale
+  a(href="/stock") Stock Overview
+  a(href="/users") Log Out
+//  Main Content 
+.main-content
+  h1.mb-4 Welcome, Employee!
+  //  Cards Summary 
+  .row.g-4.mb-4
+    .col-md-4
+      .card.text-center.p-3
+        h5 Total Sales
+        p.fs-3.text-success
+    .col-md-4
+      .card.text-center.p-3
+        h5 Products Sold
+        p.fs-3.text-primary
+    .col-md-4
+      .card.text-center.p-3
+        h5 Pending Deliveries
+        p.fs-3.text-warning
+  script(src="/js/employees-db.js")

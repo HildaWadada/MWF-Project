@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Record Stock
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/stock.css")
+
+  body
+    .container.mt-5
+      .card.shadow.p-4
+        h2.mb-4.text-center Record New Stock
+
+        form#stockForm(method="POST", action="/stock")
+          .row.g-3
+            .col-md-6
+              label.form-label(for="name") Product Name
+              input#name.form-control(type="text", name="name", placeholder="Hardwood Chair", required)
+
+            .col-md-6
+              label.form-label(for="product type") Product Type
+              input#type.form-control(type="text", name="type")
+
+            .col-md-6
+              label.form-label(for="supplier") Supplier
+              input#supplier.form-control(type="text", name="supplier")
+
+            .col-md-6
+              label.form-label(for="quantity") Quantity
+              input#quantity.form-control(type="number", name="quantity", value="0", min="0")
+
+            .col-md-6
+              label.form-label(for="cost") Cost Price (UGX)
+              input#cost.form-control(type="number", name="cost", placeholder="0")
+
+            .col-md-6
+              label.form-label(for="price") Selling Price (UGX)
+              input#price.form-control(type="number", name="price", placeholder="0")
+
+            .col-md-6
+              label.form-label(for="quality") Quality
+              select#quality.form-select(name="quality", required)
+                option(value="" disabled selected) Select Quality
+                option(value="High") High
+                option(value="Medium") Medium
+                option(value="Low") Low
+
+            .col-md-6
+              label.form-label(for="lastUpdate") Date
+              input#lastUpdate.form-control(type="date", name="lastUpdate")
+
+          .d-flex.justify-content-end.mt-4
+            button.btn.btn-success.me-2(type="submit") Save Stock
+            button.btn.btn-secondary(type="reset") Clear Form
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js")
+    script(src="/js/stock-form.js")

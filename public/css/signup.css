@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+  background: linear-gradient( to right, #76e2f6, #946a92);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center the card */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card Styling */
+.signup-card {
+  background: #69a0cd;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Title */
+h2 {
+  color: #171718;
+  font-weight: bold;
+}
+
+/* Inputs */
+.form-control {
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: 0.3s;
+
+}
+
+.form-control:focus {
+  border-color: #5c7d9e;
+  box-shadow: 0 0 5px rgba(92, 125, 158, 0.5);
+}
+
+/* Button */
+.btn-success {
+  background-color: #727976;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+}

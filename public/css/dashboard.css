@@ -1,0 +1,143 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:  #c0d8f4;
+  color: #333;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #171718;
+  color: #81a1ea;
+  padding: 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #81a1ea;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 600;
+}
+
+.sidebar nav a:hover {
+  background: #5c7d9e;
+  color: #fff;
+}
+
+/* Logout Button */
+.sidebar .btn-danger {
+  background: #e74c3c;
+  border: none;
+  transition: background 0.3s;
+}
+
+.sidebar .btn-danger:hover {
+  background: #c0392b;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Header */
+header h1 {
+  font-weight: bold;
+  color: #171718;
+}
+
+header p {
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Dashboard Cards Section */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #171718;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #5c7d9e;
+}
+
+/* Scrollbar Styling */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #5c7d9e;
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #c0d8f4;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: none;
+    margin-top: auto;
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}

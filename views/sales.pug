@@ -1,0 +1,45 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Sales Summary
+link(rel="stylesheet", href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/sales.css")
+//  Navigation 
+ul.nav.justify-content-end
+  li.nav-item
+    a.nav-link(href="/sales") SALES RECORDS
+  li.nav-item
+    a.nav-link(href="/stock") STOCK
+  li.nav-item.
+    
+    
+  li.nav-item
+    a.nav-link(href="/products") PRODUCTS
+  li.nav-item.
+    
+    
+  li.nav-item
+    a.nav-link(href="/attendants") ATTENDANTS
+  a.nav-link.active(aria-current="page", href="/dashboard") DASHBOARD
+.table-section
+  h3 Sales Records
+  .d-flex.justify-content-between.align-items-center.mb-3
+    input.form-control.w-25#searchInput(type="text", placeholder="Search sale...")
+    button.btn.btn-success#downloadBtn Download Report
+  //  Sales Table 
+  table.table.table-bordered.table-striped#salesTable
+    thead.table-dark
+      tr
+        th Date
+        th Product Name
+        th Type
+        th Quantity
+        th Unit Cost (UGX)
+        th Total (UGX)
+        th Payment Method
+        th Sales Agent
+        th Customer's Name
+    tbody
+  h4#grandTotal.mt-3.text-success Grand Total: UGX 0
+
+script(src="/js/sales.js")
+  

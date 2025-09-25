@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #c0d8f4;
+  padding: 20px;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #171718 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #81a1ea !important;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Headings */
+h3, h4 {
+  color: #0f0f0f;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #171718;
+  border: none;
+  color: #81a1ea;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #5c7d9e;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+}
+
+/* Sales Table */
+.table {
+  background-color: #6ae793;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table th {
+  background: #171718;
+  color: rgb(129, 161, 234);
+  text-align: center;
+  font-weight: 600;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+/* Record Sale Modal */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  background-color: #171718;
+  color: #81a1ea;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  background: #f8f9fa;
+}
+
+.modal-body input,
+.modal-body select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+  outline: none;
+  border-color: #5c7d9e;
+  box-shadow: 0 0 5px rgba(92, 125, 158, 0.5);
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-footer .btn-success {
+  background-color: #2ecc71;
+  font-weight: 600;
+}
+
+.modal-footer .btn-success:hover {
+  background-color: #27ae60;
+}
+
+/* Checkbox */
+label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Adjust Modal Size */
+.modal-dialog {
+  max-width: 600px;
+}
+.modal-dialog.modal-lg {
+  max-width: 800px;
+}

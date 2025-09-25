@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    title MWF Stock
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/stock.css")
+
+  body
+    // Navigation
+    ul.nav.justify-content-end.mb-3
+      li.nav-item
+        a.nav-link.active(href="/stock") STOCK
+      li.nav-item
+        a.nav-link(href="/sales") SALES RECORDS
+      li.nav-item
+        a.nav-link(href="/products") PRODUCTS
+      li.nav-item
+        a.nav-link(href="/attendants") ATTENDANTS
+      li.nav-item
+        a.nav-link(href="/dashboard") DASHBOARD
+
+    .container.mt-4
+      h2.mb-4 Stock Records
+
+      .d-flex.justify-content-between.mb-3
+        button.btn.btn-primary(data-bs-toggle="modal", data-bs-target="#addStockModal") ➕ Add Stock
+        input.form-control.w-25#searchInput(type="text", placeholder="Search product...")
+
+      table#stockTable.table.table-bordered.table-striped
+        thead.table-dark
+          tr
+            th Date Added
+            th Product name
+            th Type
+            th Category
+            th Quantity
+            th Cost price (UGX)
+            th Selling Price
+            th Supplier
+            th Status
+        tbody
+          // Rows will be added dynamically
+
+    // Add Stock Modal
+    .modal.fade#addStockModal(tabindex="-1")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5.modal-title Add Stock
+            button.btn-close(type="button" data-bs-dismiss="modal")
+          .modal-body
+            form#stockForm
+              .mb-3
+                label.form-label(for="name") Product Name
+                select#name.form-select(name="name", required)
+                  option(value="" disabled selected) Select Product
+                  option(value="Hardwood Chair") Hardwood Chair
+                  option(value="Softwood Table") Softwood Table
+                  option(value="Mahogany Bed") Mahogany Bed
+                  option(value="Office Desk") Office Desk
+                  option(value="Wardrobe") Wardrobe
+              .mb-3
+                label.form-label(for="type") Type
+                select#type.form-select(name="type", required)
+                  option(value="" disabled selected) Select Type
+                  option(value="Furniture") Furniture
+                  option(value="Wood") Wood
+                  option(value="Accessory") Accessory
+                  option(value="Raw Material") Raw Material
+              .mb-3
+                label.form-label(for="category") Category
+                input#category.form-control(type="text" name="category" placeholder="Category")
+              .mb-3
+                label.form-label(for="quantity") Quantity
+                input#quantity.form-control(type="number" name="quantity" value="0" min="0")
+              .mb-3
+                label.form-label(for="cost") Cost Price (UGX)
+                input#cost.form-control(type="number" name="cost" placeholder="0")
+              .mb-3
+                label.form-label(for="price") Selling Price (UGX)
+                input#price.form-control(type="number" name="price" placeholder="0")
+              .mb-3
+                label.form-label(for="supplier") Supplier
+                input#supplier.form-control(type="text" name="supplier" placeholder="Supplier Name")
+              .mb-3
+                label.form-label(for="status") Status
+                select#status.form-select(name="status")
+                  option(value="" disabled selected) Select Status
+                  option(value="Available") Available
+                  option(value="Out of Stock") Out of Stock
+              .d-flex.justify-content-end
+                button.btn.btn-success.me-2(type="submit") Save Stock
+                button.btn.btn-secondary(type="reset") Clear
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js")
+    script(src="/js/stock.js")

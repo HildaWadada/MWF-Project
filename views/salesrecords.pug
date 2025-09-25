@@ -1,0 +1,53 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Attendant Dashboard
+link(rel="stylesheet", href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/salesrecords.css")
+//  Navigation 
+ul.nav.justify-content-end
+  li.nav-item
+    a.nav-link(href="record-sales.html") RECORD A SALE
+  li.nav-item
+    a.nav-link(href="sales-summary.html") MY SALES
+  li.nav-item
+    a.nav-link(href="stock.html") STOCK OVERVIEW
+  li.nav-item
+    a.nav-link.active(aria-current="page", href="/employees.html") DASHBOARD
+  .container.mt-4
+    h3.text-center Welcome, Attendant
+    //  Quick Actions 
+    .d-flex.justify-content-around.mb-4
+      button.btn.btn-primary(data-bs-toggle="modal", data-bs-target="#saleModal") Record Sale
+    //  My Sales 
+    h4 My Sales
+    table.table.table-bordered
+      thead.table-dark
+        tr
+          th Date
+          th Product
+          th Quantity
+          th Total
+      tbody#mySales
+  //  Record Sale Modal 
+  .modal.fade#saleModal(tabindex="-1")
+    .modal-dialog
+      .modal-content
+        form#saleForm
+          .modal-header
+            h5.modal-title Record Sale
+            button.btn-close(type="button", data-bs-dismiss="modal")
+          .modal-body
+            input#saleDate.form-control.mb-2(type="date", required)
+            input#customerName.form-control.mb-2(type="text", placeholder="Customer Name", required)
+            input#productName.form-control.mb-2(type="text", placeholder="product Name", required)
+            input#saleQty.form-control.mb-2(type="number", placeholder="Quantity", required)
+            select#paymentMethod.form-control.mb-2(required)
+              option Cash
+              option Cheque
+              option Bank Overdraft
+            label
+              input#transport(type="checkbox")
+              |  Transport Needed (+5%)
+          .modal-footer
+            button.btn.btn-success(type="submit") Save Sale
+  script(src="/js/record-sales.js")

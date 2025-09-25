@@ -1,0 +1,64 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title MWF Products
+link(rel="stylesheet", href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/products.css")
+//  Navigation 
+ul.nav.justify-content-end
+  li.nav-item
+    a.nav-link(href="/products") PRODUCTS
+  li.nav-item.
+    
+    
+  li.nav-item
+    a.nav-link(href="/stock") STOCK
+  li.nav-item.
+    
+    
+  li.nav-item
+    a.nav-link(href="/sales") SALES RECORDS
+  li.nav-item
+    a.nav-link(href="/attendants") ATTENDANTS
+  a.nav-link.active(aria-current="page", href="/dashboard") DASHBOARD
+  //  Page Header 
+  .container.mt-4
+    h2.text-center.mb-4 MWF Products
+    //  Action buttons 
+    .d-flex.justify-content-between.mb-3
+      button.btn.btn-primary(data-bs-toggle="modal", data-bs-target="#addProductModal") ➕ Add Product
+      input.form-control.w-25(type="text", placeholder="Search product...")
+    //  Products Table 
+    table.table.table-striped.table-bordered
+      thead.table-dark
+        tr
+          th Date Added
+          th Product Name
+          th Type
+          th Category
+          th Quantity
+          th Cost Price (UGX)
+          th Selling Price (UGX)
+          th Supplier
+          th Status
+          th Actions
+      tbody#productTableBody
+    //  Modal for Add Product 
+    .modal.fade#addProductModal(tabindex="-1")
+      .modal-dialog
+        .modal-content
+          form#addProductForm
+            .modal-header
+              h5.modal-title Add New Product
+              button.btn-close(type="button", data-bs-dismiss="modal")
+            .modal-body
+              input.form-control.mb-2#date(type="date", required)
+              input.form-control.mb-2#name(type="text", placeholder="Product Name", required)
+              input.form-control.mb-2#type(type="text", placeholder="Type", required)
+              input.form-control.mb-2#category(type="text", placeholder="Category", required)
+              input.form-control.mb-2#qty(type="number", placeholder="Quantity", required)
+              input.form-control.mb-2#cost(type="number", placeholder="Cost Price", required)
+              input.form-control.mb-2#price(type="number", placeholder="Selling Price", required)
+              input.form-control.mb-2#supplier(type="text", placeholder="Supplier", required)
+            .modal-footer
+              button.btn.btn-primary(type="submit") Save Product
+    script(src="/js/products.js")

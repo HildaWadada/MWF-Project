@@ -1,0 +1,73 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title MWF Attendants
+link(rel="stylesheet", href="CSS/bootstrap-5.3.7-dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/attendants.css")
+//  Navigation 
+ul.nav.justify-content-end
+  li.nav-item
+    a.nav-link(href="/attendants") ATTENDANTS
+  li.nav-item
+    a.nav-link(href="/stock") STOCK
+  li.nav-item.
+    
+    
+  li.nav-item
+    a.nav-link(href="/sales") SALES RECORDS
+  li.nav-item
+    a.nav-link(href="/products") PRODUCTS
+  a.nav-link.active(aria-current="page", href="/dashboard") DASHBOARD
+  //  Page Header 
+  .container.mt-4
+    h2.text-center.mb-4 👥 MWF Attendants
+    //  Action buttons 
+    .d-flex.justify-content-between.mb-3
+      button.btn.btn-primary(data-bs-toggle="modal", data-bs-target="#addAttendantModal") ➕ Add Attendant
+      input#searchAttendant.form-control.w-25(type="text", placeholder="Search attendant...")
+    //  Attendants Table 
+    table.table.table-striped.table-bordered
+      thead.table-dark
+        tr
+          th Name
+          th Role
+          th Phone
+          th Email
+          th Status
+          th Actions
+      tbody#attendantTableBody
+        tr
+          td
+          td
+          td
+          td
+          //  <td class="text-success">Active ✅</td> 
+          td
+            button.btn.btn-sm.btn-warning.edit-btn Edit
+            button.btn.btn-sm.btn-danger.delete-btn Delete
+        tr
+          td
+          td
+          td
+          td
+          //  <td class="text-danger">Inactive ❌</td> 
+          td
+            button.btn.btn-sm.btn-warning.edit-btn Edit
+            button.btn.btn-sm.btn-danger.delete-btn Delete
+  //  Modal for Add/Edit Attendant 
+  .modal.fade#addAttendantModal(tabindex="-1")
+    .modal-dialog
+      .modal-content
+        form#attendantForm
+          .modal-header
+            h5.modal-title Add Attendant
+            button.btn-close(type="button", data-bs-dismiss="modal")
+          .modal-body
+            input.form-control.mb-2#attendantName(type="text", placeholder="Full Name", required)
+            input.form-control.mb-2#attendantRole(type="text", placeholder="Role", required)
+            input.form-control.mb-2#attendantPhone(type="tel", placeholder="Phone Number", required)
+            input.form-control.mb-2#attendantEmail(type="email", placeholder="Email", required)
+            select.form-control.mb-2#attendantStatus(required)
+              option(value="Active") Active ✅
+              option(value="Inactive") Inactive ❌
+          .modal-footer
+            button.btn.btn-primary(type="submit") Save Attendant

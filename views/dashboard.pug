@@ -1,0 +1,35 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title MWF Ltd Dashboard
+link(rel="stylesheet", href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css")
+link(rel="stylesheet", href="/css/dashboard.css")
+//  Sidebar 
+aside.sidebar
+  h2 MWF Ltd
+  nav.d-flex.flex-column.gap-2
+    a(href="/sales") Sales Records
+    a(href="/stock") Stock Summary
+    a(href="/products") Products
+    a(href="/attendants") Attendants
+    a.btn.btn-danger.mt-3(href="/users") Log Out
+//  Main Content 
+.main-content
+  header
+    h1 Welcome, Manager
+    p.text-muted Here’s an overview of your business today.
+  //  Dashboard Cards 
+  section.cards
+    .card
+      h3 Total Sales Today
+      p#totalSales UGX 0
+    .card
+      h3 Stock Items
+      p#stockCount 0
+    .card
+      h3 Low Stock
+      p#lowStockCount 0
+    .card
+      h3 Top Product
+      p#topProduct -
+
+script(src="/js/dashboard.js")
